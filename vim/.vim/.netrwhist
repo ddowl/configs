@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home1/drew/co/manage/lt/migrate'
+let g:netrw_dirhist_2='/home1/drew/co/manage/private/react/components'
+let g:netrw_dirhist_3='/home1/drew/co/manage/script'
+let g:netrw_dirhist_4='/home1/drew/co/manage/script/radius'
