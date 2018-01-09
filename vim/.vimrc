@@ -168,7 +168,6 @@ map <Leader>tv  :tabe app/views/
 "let g:syntastic_debug=1
 
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
