@@ -83,7 +83,9 @@ nnoremap gl <C-w>l
 
 map <C-n> :NERDTreeToggle<CR>
 
-
+if &diff
+    highlight! link DiffText MatchParen
+endif
 
 set exrc " enable per-directory .vimrc files
 set secure " disable unsafe commands in local .vimrc files
