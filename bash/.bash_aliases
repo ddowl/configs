@@ -42,7 +42,7 @@ alias path='echo -e ${PATH//:/\\n}'         # path:         Echo all executable 
 
 # Networking
 alias ssh='ssh -A'
-alias ssh-addme='ssh -K ~/.ssh/id_rsa'
+alias ssh-addme='ssh-add -K ~/.ssh/id_rsa'
 alias fix_stty='stty sane'                  # fix_stty:     Restore terminal settings when screwed up
 
 
