@@ -27,8 +27,14 @@
  
 #   Set Paths
 #   ------------------------------------------------------------
-    export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$PATH"
- 
+    export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$HOME/.rbenv/bin:$PATH"
+    eval "$(rbenv init -)"
+
+# Source things for Git
+#
+
+  source ~/.git-completion.bash
+
 #   Set Default Editor (change 'Vim' to the editor of your choice)
 #   ------------------------------------------------------------
     export EDITOR=/usr/bin/vim
