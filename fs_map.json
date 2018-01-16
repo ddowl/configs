@@ -1,0 +1,20 @@
+{
+  "shared": {
+    "bash/.bash_aliases": "~/.bash_aliases",
+    "bash/.bash_logout": "~/.bash_logout",
+    "git/.git-completion.bash": "~/.git-completion.bash",
+    "git/.gitconfig": "~/.gitconfig",
+    "irb/.irbrc": "~/.irbrc",
+    "iterm2/.iterm2_shell_integration.bash": "~/.iterm2_shell_intergration.bash",
+    "vim/.vimrc": "~/.vimrc",
+    "vim/.vim/": "~/.vim/"
+  },
+
+  "mac": {
+    "bash/mac/.bash_profile": "~/.bash_profile"
+  },
+
+  "debian": {
+    "bash/debian/.bashrc": "~/.bashrc"
+  }
+}

@@ -6,6 +6,8 @@ Install using `git clone --recursive`, or if you've already cloned the repo use 
 
 Alternatively, you can run `./setupSubmodules` in the checkout directory, which will also get the latest version of each submodule.
 
+Please execute setup scripts in the checkout directory
+
 For now, manually copy each override each config file you want with one in the checkout. Vimdiff support to be added soon...
 
 ### Vimdiff
