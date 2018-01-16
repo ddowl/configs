@@ -50,6 +50,12 @@ all_config_files = immediate_child_dirs.map do |dir|
       end
       source = e
 
+      #puts "Linking #{target} -> #{source}"
+
+      target_dir = File.dirname(target)
+      unless Dir.exists?(target_dir)
+        `mkdir -p #{target_dir}`
+      end
       `ln -sfv #{source} #{target}`
     end
 
