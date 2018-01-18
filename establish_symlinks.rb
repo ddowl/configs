@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+require 'bundler/setup'
 require 'os'
 require 'find'
 
@@ -6,7 +7,7 @@ VIM_DIR_REGEXP = /\/.vim\//
 
 def is_blacklisted(file)
   # Blacklist regexs
-  blacklist = [/\/iterm2\//, /\/sessions\//]
+  blacklist = [/\/iterm2\//, /\/sessions\//, /\/vendor\//]
   # Block mapping configs based on OS
   if OS.mac?
     blacklist << /\/debian\//
