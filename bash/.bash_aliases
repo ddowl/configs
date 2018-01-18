@@ -7,7 +7,7 @@ alias glg='git log --oneline --abbrev-commit --all --graph --decorate --color' #
 alias gs='git status'
 
 # Make Terminal Better 
-alias ls='ls -Gp'                # Preferred ‘ls’ implementation
+alias ls='ls -Gp --color=auto'                # Preferred ‘ls’ implementation
 alias la='ls -al'
 alias lrt='ls -lrt'
 alias la='ls -Al'
