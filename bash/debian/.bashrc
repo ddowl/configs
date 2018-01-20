@@ -56,17 +56,7 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-# enable color support of ls, dir, and grep
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    alias dir='dir --color=auto'
-    alias vdir='vdir --color=auto'
 
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -80,6 +70,20 @@ fi
 # Meraki-specific aliases
 if [ -f ~/.bash_aliases_meraki ]; then
   . ~/.bash_aliases_meraki
+fi
+
+# Debian-specific Debian overrides
+
+# enable color support of ls, dir, and grep
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
 fi
 
 # Source git things
