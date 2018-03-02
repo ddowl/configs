@@ -177,6 +177,7 @@ let g:syntastic_loc_list_height = 5
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
+let g:syntastic_ruby_checkers = ['mri']
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_args = '--rulesdir ~/co/manage/js_infra/eslint_rules/'
 let g:syntastic_javascript_eslint_exec = './node_modules/.bin/eslint'
