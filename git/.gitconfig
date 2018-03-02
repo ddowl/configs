@@ -68,6 +68,9 @@
 [push]
   default = simple
 
+[rebase]
+  authoStash = true
+
 [url "https://bitbucket.org/"]
   insteadOf = bb:
 
