@@ -114,8 +114,6 @@ map <Leader>d :bd<Return>
 map <Leader>f :b<Return>
 map <Leader><Leader> :bprev<Return>
 
-"" Show the buffer number in the status line.
-set laststatus=2 statusline=%02n:%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
 " fugitive.vim shortcuts
 nnoremap g* :Ggrep <cword><cr><cr>:copen<cr>
@@ -144,9 +142,12 @@ vnoremap <silent> # :<C-U>
   \gV:call setreg('"', old_reg, old_regtype)<CR>
 
 
-" set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
-" set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-set laststatus=2
+
+"" Show the buffer number in the status line.
+set laststatus=2 " Always display the statusline in all windows
+set showtabline=2 " Always display the tabline, even if there is only one tab
+set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+
 " air-line
 let g:airline_powerline_fonts = 1
 
