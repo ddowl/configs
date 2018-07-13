@@ -2,7 +2,7 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 call pathogen#helptags()
-Helptags
+" Helptags
 set encoding=utf-8
 set nocompatible
 set noswapfile
@@ -24,6 +24,9 @@ filetype indent on
 " set leader to comma
 let mapleader = ","
 
+" automatically use system clipboard
+set clipboard=unnamedplus
+
 " spell check
 set spelllang=en
 set spellfile=~/.vim/spell/en.utf-8.add
@@ -32,6 +35,21 @@ nmap <Leader>w :setlocal spell! spelllang=en<CR>
 
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 au BufNewFile,BufRead *.jbuilder set ft=ruby
+
+" better tab movement
+nnoremap th  :tabfirst<CR>
+nnoremap tj  :tabnext<CR>
+nnoremap tk  :tabprev<CR>
+nnoremap tl  :tablast<CR>
+nnoremap tt  :tabedit<Space>
+nnoremap tn  :tabnext<Space>
+nnoremap tm  :tabm<Space>
+nnoremap td  :tabclose<CR>
+
+" Show whitespace
+highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+match ExtraWhitespace /\s\+$/
+
 
 " vim-javascript
 let g:javascript_plugin_jsdoc = 1
@@ -50,14 +68,10 @@ let g:javascript_conceal_underscore_arrow_function = "🞅"
 set conceallevel=1
 map <leader>l :exec &conceallevel ? "set conceallevel=0" : "set conceallevel=1"<CR>
 
-
-" for command-T
-let g:CommandTFileScanner="watchman"
-let g:CommandTCancelMap = ['<ESC>', '<C-c>']
-let g:CommandTMaxFiles=1000000
-set wildignore+=node_modules
-
 runtime macros/matchit.vim
+
+" enable fzf
+set rtp+=~/.fzf
 
 set autoindent
 set smartindent
@@ -107,7 +121,7 @@ nnoremap <F2> :set nonumber!<CR>
 nnoremap <F3> :set hls!<CR>
 
 set wildchar=<Tab> wildmenu wildmode=full
-map <Leader>t :CommandT<Return>
+set wildignore+=node_modules
 map <Leader>a :bprev<Return>
 map <Leader>s :bnext<Return>
 map <Leader>d :bd<Return>

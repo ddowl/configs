@@ -56,8 +56,6 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-
-
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -91,6 +89,11 @@ if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
+# Source cht.sh bash completion
+if [ -f ~/.bash.d/cht.sh ]; then
+  . ~/.bash.d/cht.sh
+fi
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -102,8 +105,18 @@ if ! shopt -oq posix; then
   fi
 fi
 
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
+
+
 JDK_HOME='/usr/lib/jvm/java-7-openjdk-i386'
 
 PATH="$HOME/.yarn/bin:$PATH"
-PATH="$HOME/bin:$PATH"
+# set up local dir for personal binaries/libs/docs
+PATH="$HOME/local/bin:$PATH"
+MANPATH="$HOME/local/share/man:/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
+
 export PATH
+export MANPATH
+export JDK_HOME
+

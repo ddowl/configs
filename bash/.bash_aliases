@@ -34,6 +34,7 @@ function op {
 }
 alias cic='set completion-ignore-case On'   # cic:          Make tab-completion case-insensitive
 alias show_options='shopt'                  # Show_options: display bash options settings
+alias fzfp='fzf --preview "[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || (highlight -O ansi -l {} || coderay {} || rougify {} || cat {}) 2> /dev/null | head -500"'
 
 # Systems and Processes
 alias psg='ps aux | grep '
@@ -44,5 +45,3 @@ alias path='echo -e ${PATH//:/\\n}'         # path:         Echo all executable 
 alias ssh='ssh -A'
 alias ssh-addme='ssh-add -K ~/.ssh/id_rsa'
 alias fix_stty='stty sane'                  # fix_stty:     Restore terminal settings when screwed up
-
-
