@@ -27,7 +27,8 @@
  
 #   Set Paths
 #   ------------------------------------------------------------
-    export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$HOME/.rbenv/bin:$PATH"
+    export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$HOME/.rbenv/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:$HOME/.npm-packages/bin:$PATH"
+    export NODE_PATH="/usr/local/lib/node_modules"
     eval "$(rbenv init -)"
 
 # Source things for Git
