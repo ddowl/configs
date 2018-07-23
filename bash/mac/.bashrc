@@ -83,6 +83,8 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+eval $(thefuck --alias)
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -97,3 +99,8 @@ fi
 JDK_HOME='/usr/lib/jvm/java-7-openjdk-i386'
 
 export PATH="$HOME/.yarn/bin:$PATH"
+# set up local dir for personal binaries/libs/docs
+export PATH="$HOME/local/bin:$PATH"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
