@@ -36,6 +36,10 @@ nmap <Leader>w :setlocal spell! spelllang=en<CR>
 au BufNewFile,BufRead *.json.jbuilder set ft=ruby
 au BufNewFile,BufRead *.jbuilder set ft=ruby
 
+" Automatic folds on save/load
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview 
+
 " better tab movement
 nnoremap th  :tabfirst<CR>
 nnoremap tj  :tabnext<CR>
@@ -45,6 +49,15 @@ nnoremap tt  :tabedit<Space>
 nnoremap tn  :tabnext<Space>
 nnoremap tm  :tabm<Space>
 nnoremap td  :tabclose<CR>
+
+" Better splits
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+set splitbelow
+set splitright
+
 
 " Show whitespace
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
