@@ -105,6 +105,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
+eval $(thefuck --alias)
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
 
