@@ -44,4 +44,6 @@ alias path='echo -e ${PATH//:/\\n}'         # path:         Echo all executable 
 # Networking
 alias ssh='ssh -A'
 alias ssh-addme='ssh-add -K ~/.ssh/id_rsa'
+export DROPLET_IP='178.128.77.208'
+alias ssh-void="ssh drew@$DROPLET_IP"
 alias fix_stty='stty sane'                  # fix_stty:     Restore terminal settings when screwed up
