@@ -2,6 +2,8 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+export EDITOR="vim"
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -122,6 +124,8 @@ JDK_HOME='/usr/lib/jvm/java-7-openjdk-i386'
 PATH="$HOME/.yarn/bin:$PATH"
 # set up local dir for personal binaries/libs/docs
 PATH="$HOME/local/bin:$PATH"
+# add Rust to system PATH
+PATH="$HOME/.cargo/bin:$PATH"
 MANPATH="$HOME/local/share/man:/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
 
 export PATH
