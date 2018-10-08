@@ -36,7 +36,7 @@ elsif Dir.pwd.split('/').last != 'configs'
 end
 
 immediate_child_dirs = Dir["#{Dir.pwd}/*/"]
-all_config_files = immediate_child_dirs.map do |dir|
+_ = immediate_child_dirs.map do |dir|
   Find.find(dir) do |e|
 
     if File.file?(e)
@@ -51,7 +51,7 @@ all_config_files = immediate_child_dirs.map do |dir|
       end
       source = e
 
-      #puts "Linking #{target} -> #{source}"
+      puts "Linking #{target} -> #{source}"
 
       target_dir = File.dirname(target)
       unless Dir.exists?(target_dir)
