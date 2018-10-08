@@ -118,6 +118,8 @@ eval $(thefuck --alias)
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
 
+# Only load Liquid Prompt in interactive shells, not from a script or from scp
+[[ $- = *i* ]] && source ~/liquidprompt/liquidprompt
 
 JDK_HOME='/usr/lib/jvm/java-7-openjdk-i386'
 

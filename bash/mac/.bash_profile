@@ -306,3 +306,5 @@ fi
 #   then use: ~/Dev/Perl/randBytes 1048576 > 10MB.dat
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+export PATH="$HOME/.cargo/bin:$PATH"
