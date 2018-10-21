@@ -41,6 +41,10 @@ alias psg='ps aux | grep '
 alias path='echo -e ${PATH//:/\\n}'         # path:         Echo all executable Paths
 # alias which='type -all'                     # which:        Find executables
 
+# Executable aliases
+alias python='python3'
+alias pip='pip3'
+
 # Networking
 alias ssh='ssh -A'
 alias ssh-addme='ssh-add -K ~/.ssh/id_rsa'
