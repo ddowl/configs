@@ -27,7 +27,8 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 
 #   Set Paths
 #   ------------------------------------------------------------
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$HOME/local/bin:$HOME/.rbenv/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:$HOME/.npm-packages/bin:$HOME/.yarn/bin:/Users/drewdowling/Library/Python/3.7/bin:$PATH"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$HOME/local/bin:$HOME/.rbenv/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:$HOME/.npm-packages/bin:$HOME/.yarn/bin:/Users/drewdowling/Library/Python/3.7/bin:$JAVA_HOME/bin:$PATH"
 export NODE_PATH="/usr/local/lib/node_modules"
 eval "$(rbenv init -)"
 
