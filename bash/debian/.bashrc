@@ -130,6 +130,9 @@ PATH="$HOME/local/bin:$PATH"
 PATH="$HOME/.cargo/bin:$PATH"
 MANPATH="$HOME/local/share/man:/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
 
+# load rbenv
+eval "$(rbenv init -)"
+
 export PATH
 export MANPATH
 export JDK_HOME
