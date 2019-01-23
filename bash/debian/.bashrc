@@ -137,3 +137,7 @@ export PATH
 export MANPATH
 export JDK_HOME
 
+# Connect to my VPN if it exists
+if ! type nordvpn > /dev/null; then
+  nordvpn connect
+fi
