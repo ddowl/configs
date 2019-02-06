@@ -5,8 +5,6 @@
 	rmdir = true
 [alias]
   all = add --all
-  gpush = push origin HEAD:refs/for/master
-  gpull = pull --rebase origin master
   unpushed = log --branches --not --remotes --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	ca = commit -a
@@ -67,6 +65,9 @@
 
 [push]
   default = simple
+
+[pull]
+  rebase = true
 
 [rebase]
   authoStash = true
