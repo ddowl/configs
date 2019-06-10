@@ -7,11 +7,10 @@ alias glg='git log --oneline --abbrev-commit --all --graph --decorate --color' #
 alias gs='git status'
 
 # Make Terminal Better 
-alias ls='ls -Gp'                # Preferred ‘ls’ implementation
-alias la='ls -al'
-alias lrt='ls -lrt'
-alias la='ls -Al'
-alias l='ls -CF'
+alias ls='ls -Gph'                # Preferred ‘ls’ implementation
+alias la='ls -alh'
+alias lrt='ls -lrth'
+alias l='ls -CFh'
 alias cp='cp -iv'                           # Preferred 'cp' implementation
 alias mv='mv -iv'                           # Preferred 'mv' implementation
 alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
