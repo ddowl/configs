@@ -43,6 +43,7 @@ alias path='echo -e ${PATH//:/\\n}'         # path:         Echo all executable 
 # Executable aliases
 alias python='python3'
 alias pip='pip3'
+alias jq='~/local/bin/jq'
 
 # Networking
 alias ssh='ssh -A'
