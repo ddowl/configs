@@ -31,6 +31,9 @@ export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Ho
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$HOME/local/bin:$HOME/.local/bin:$HOME/.ghcup/bin:$HOME/.rbenv/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:$HOME/.npm-packages/bin:$HOME/.yarn/bin:/Users/drewdowling/Library/Python/3.7/bin:$JAVA_HOME/bin:$PATH"
 export NODE_PATH="/usr/local/lib/node_modules"
 eval "$(rbenv init -)"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Source things for Git
 #
