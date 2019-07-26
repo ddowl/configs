@@ -84,7 +84,8 @@ map <leader>l :exec &conceallevel ? "set conceallevel=0" : "set conceallevel=1"<
 runtime macros/matchit.vim
 
 " enable fzf
-set rtp+=~/.fzf
+" set rtp+=~/.fzf
+set rtp+=/usr/local/opt/fzf
 
 set autoindent
 set smartindent
