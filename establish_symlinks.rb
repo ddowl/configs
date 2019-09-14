@@ -7,7 +7,12 @@ VIM_DIR_REGEXP = /\/.vim\//
 
 def is_blacklisted(file)
   # Blacklist regexs
-  blacklist = [/\/iterm2\//, /\/sessions\//, /\/vendor\//]
+  blacklist = [
+    /\/iterm2\//,
+    /\/sessions\//,
+    /\/vendor\//,
+    /\/liquidprompt\// # Need to just symlink binary, or sync to ~/.liquidprompt
+  ]
   # Block mapping configs based on OS
   if OS.mac?
     blacklist << /\/debian\//
