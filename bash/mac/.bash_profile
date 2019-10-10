@@ -275,8 +275,8 @@ if [ -f ~/.bash_aliases ]; then
   . ~/.bash_aliases
 fi
 
-if [ -f ~/.bash_aliases_meraki ]; then
-  . ~/.bash_aliases_meraki
+if [ -f ~/.bashrc-cf ]; then
+  . ~/.bashrc-cf
 fi
 
 #   ---------------------------------------
@@ -332,4 +332,18 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # Setting PATH for Python 3.6
 # The original version is saved in .bash_profile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
+
+# Add ~/.local/bin to PATH
+PATH="/Users/drewdowling/.local/bin:${PATH}"
+
 export PATH
+
+# Add Haskell tools to PATH
+source ~/.ghcup/env
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/drewdowling/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/Users/drewdowling/Downloads/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/drewdowling/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/drewdowling/Downloads/google-cloud-sdk/completion.bash.inc'; fi

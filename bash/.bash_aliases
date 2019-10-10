@@ -17,7 +17,7 @@ alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
 mcd () { mkdir -p "$1" && cd "$1"; }        # mcd:          Makes new Dir and jumps inside
 alias ll='ls -FGlAhp'                       # Preferred 'ls' implementation
 alias less='less -FSRXc'                    # Preferred 'less' implementation
-cd() { builtin cd "$@"; ll; }               # Always list directory contents upon 'cd'
+# cd() { builtin cd "$@"; ll; }               # Always list directory contents upon 'cd'
 alias cd..='cd ../'                         # Go back 1 directory level (for fast typers)
 alias ..='cd ../'                           # Go back 1 directory level
 alias ...='cd ../../'                       # Go back 2 directory levels
@@ -43,7 +43,6 @@ alias path='echo -e ${PATH//:/\\n}'         # path:         Echo all executable 
 # Executable aliases
 alias python='python3'
 alias pip='pip3'
-alias jq='~/local/bin/jq'
 
 # Networking
 alias ssh='ssh -A'
