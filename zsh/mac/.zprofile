@@ -35,7 +35,7 @@ eval "$(rbenv init -)"
 # Source things for Git
 #
 
-source ~/.git-completion.bash
+source ~/.git-completion.zsh
 
 #   Set Default Editor (change 'Vim' to the editor of your choice)
 #   ------------------------------------------------------------
@@ -59,7 +59,7 @@ source "`brew --prefix grc`/etc/grc.bashrc"
 #   -----------------------------
 # See .bash_aliases for more!
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
 
 eval $(thefuck --alias)
