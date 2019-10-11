@@ -71,7 +71,24 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+  git
+  brew
+  cargo
+  fd
+  fzf
+  history
+  mix
+  osx
+  ripgrep
+  ruby
+  rust
+  scala
+  stack
+  timer
+  tmux
+  z
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -101,8 +118,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f ~/.zsh_aliases ]; then
+    . ~/.zsh_aliases
 fi
 
 eval $(thefuck --alias)
@@ -111,3 +128,6 @@ eval $(thefuck --alias)
 export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
 
 fpath=(/usr/local/share/zsh-completions $fpath)
+
+zstyle ':completion:*:*:git:*' script ~/.git-completion.bash
+fpath=(~/.zsh $fpath)
