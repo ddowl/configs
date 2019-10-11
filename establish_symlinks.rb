@@ -4,6 +4,7 @@ require 'os'
 require 'find'
 
 VIM_DIR_REGEXP = /\/.vim\//
+OH_MY_ZSH_DIR_REGEXP = /\/.oh-my-zsh\//
 
 def is_blacklisted(file)
   # Blacklist regexs
@@ -23,12 +24,20 @@ def is_blacklisted(file)
   blacklist.select { |regex| regex =~ file }.any?
 end
 
-def is_vim_package(file)
+def is_vim(file)
   VIM_DIR_REGEXP.match(file)
 end
 
-def vim_package_path(vim_package_file)
-  "~/.vim/#{vim_package_file.rpartition(VIM_DIR_REGEXP)[2]}"
+def vim_path(vim_file)
+  "~/.vim/#{vim_file.rpartition(VIM_DIR_REGEXP)[2]}"
+end
+
+def is_oh_my_zsh(file)
+  OH_MY_ZSH_DIR_REGEXP.match(file)
+end
+
+def oh_my_zsh_path(oh_my_zsh_file)
+  "~/.oh-my-zsh/#{oh_my_zsh_file.rpartition(OH_MY_ZSH_DIR_REGEXP)[2]}"
 end
 
 
@@ -47,9 +56,12 @@ _ = immediate_child_dirs.map do |dir|
     if File.file?(e)
       if is_blacklisted(e)
         next
-      elsif is_vim_package(e)
+      elsif is_vim(e)
         # files in the '.vim' dir belong in ~/.vim/ 
-        target = vim_package_path(e)
+        target = vim_path(e)
+      elsif is_oh_my_zsh(e)
+        # files in the '.oh_my_zsh' dir belong in ~/.oh-my-zsh/ 
+        target = oh_my_zsh_path(e)
       else
         # everything else belongs in ~/
         target = "~/#{File.basename(e)}"
