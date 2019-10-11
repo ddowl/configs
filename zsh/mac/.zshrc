@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="$HOME/bin:/usr/local/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="$HOME/local/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
@@ -11,7 +11,7 @@ export ZSH="/Users/$USER/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="" # disabled for Pure prompt
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -92,6 +92,23 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+# Pure prompt options
+# To install, run: `npm install --global pure-prompt`
+# NOTE: prompt is incompatible with plugins "vi-mode" and "virtualenv"
+autoload -U promptinit; promptinit
+
+# optionally define some options
+PURE_CMD_MAX_EXEC_TIME=4
+
+# change the path color
+zstyle :prompt:pure:path color white
+
+# change the color for both `prompt:success` and `prompt:error`
+zstyle ':prompt:pure:prompt:*' color cyan
+
+prompt pure # NOTE: must be activated _after_ `source $ZSH/oh-my-zsh.sh`
+
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -131,3 +148,5 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 
 zstyle ':completion:*:*:git:*' script ~/.git-completion.bash
 fpath=(~/.zsh $fpath)
+
+
