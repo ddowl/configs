@@ -73,11 +73,6 @@ if [ -f ~/.bash_aliases ]; then
   . ~/.bash_aliases
 fi
 
-# Meraki-specific aliases
-if [ -f ~/.bash_aliases_meraki ]; then
-  . ~/.bash_aliases_meraki
-fi
-
 # Debian-specific Debian overrides
 
 # enable color support of ls, dir, and grep
@@ -126,9 +121,15 @@ JDK_HOME='/usr/lib/jvm/java-7-openjdk-i386'
 PATH="$HOME/.yarn/bin:$PATH"
 # set up local dir for personal binaries/libs/docs
 PATH="$HOME/local/bin:$PATH"
+PATH="$HOME/.local/bin:$PATH"
 # add Rust to system PATH
 PATH="$HOME/.cargo/bin:$PATH"
+# add Go to system PATH
+PATH="/usr/local/go/bin:$PATH"
+
 MANPATH="$HOME/local/share/man:/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
+
+GOPATH="~/go"
 
 # load rbenv
 eval "$(rbenv init -)"
@@ -141,3 +142,7 @@ export JDK_HOME
 if ! type nordvpn > /dev/null; then
   nordvpn connect
 fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
