@@ -108,6 +108,9 @@ zstyle ':prompt:pure:prompt:*' color cyan
 
 prompt pure # NOTE: must be activated _after_ `source $ZSH/oh-my-zsh.sh`
 
+source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+PROMPT='$(kube_ps1)'$PROMPT
+
 
 # User configuration
 
