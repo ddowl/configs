@@ -83,3 +83,6 @@
 
 [url "https://gist.github.com/"]
   insteadOf = gist:
+
+[includeIf "gitdir:~/cf-repos/"]
+  path = ~/cf-repos/.gitconfig
