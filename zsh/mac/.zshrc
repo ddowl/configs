@@ -86,7 +86,6 @@ plugins=(
   rust
   scala
   stack
-  timer
   tmux
   z
 )
