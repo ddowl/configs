@@ -4,6 +4,7 @@ export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="$HOME/local/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/$USER/.oh-my-zsh"
@@ -141,6 +142,8 @@ PROMPT='$(kube_ps1)'$PROMPT
 if [ -f ~/.zsh_aliases ]; then
     . ~/.zsh_aliases
 fi
+
+export GOPRIVATE="code.cfops.it"
 
 eval $(thefuck --alias)
 
