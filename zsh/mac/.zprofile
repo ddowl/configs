@@ -32,11 +32,6 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$HOME/l
 export NODE_PATH="/usr/local/lib/node_modules"
 eval "$(rbenv init -)"
 
-# Source things for Git
-#
-
-source ~/.git-completion.zsh
-
 #   Set Default Editor (change 'Vim' to the editor of your choice)
 #   ------------------------------------------------------------
 export EDITOR=/usr/bin/vim
@@ -52,12 +47,11 @@ export BLOCKSIZE=1k
 #   ------------------------------------------------------------
 #   export CLICOLOR=1
 #   export LSCOLORS=ExFxBxDxCxegedabagacad
-source "`brew --prefix grc`/etc/grc.bashrc" 
 
 #   -----------------------------
 #   2.  MAKE TERMINAL BETTER
 #   -----------------------------
-# See .bash_aliases for more!
+# See .zsh_aliases for more!
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
@@ -94,24 +88,6 @@ alias numFiles='echo $(ls -1 | wc -l)'      # numFiles:     Count of non-hidden 
 alias make1mb='mkfile 1m ./1MB.dat'         # make1mb:      Creates a file of 1mb size (all zeros)
 alias make5mb='mkfile 5m ./5MB.dat'         # make5mb:      Creates a file of 5mb size (all zeros)
 alias make10mb='mkfile 10m ./10MB.dat'      # make10mb:     Creates a file of 10mb size (all zeros)
-
-#   cdf:  'Cd's to frontmost window of MacOS Finder
-#   ------------------------------------------------------
-cdf () {
-  currFolderPath=$( /usr/bin/osascript <<"    EOT"
-  tell application "Finder"
-  try
-  set currFolder to (folder of the front window as alias)
-  on error
-  set currFolder to (path to desktop folder as alias)
-end try
-POSIX path of currFolder
-end tell
-EOT
-)
-echo "cd to \"$currFolderPath\""
-cd "$currFolderPath"
-}
 
 #   extract:  Extract most know archives with one command
 #   ---------------------------------------------------------
@@ -261,19 +237,14 @@ export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/dev
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 # source /usr/local/bin/virtualenvwrapper.sh
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 
 #   ---------------------------------------
 #   9. OTHER FILE IMPORTS 
 #   ---------------------------------------
 
-if [ -f ~/.bash_aliases ]; then
-  . ~/.bash_aliases
-fi
-
-if [ -f ~/.bash_aliases_meraki ]; then
-  . ~/.bash_aliases_meraki
+if [ -f ~/.zsh_aliases ]; then
+  . ~/.zsh_aliases
 fi
 
 #   ---------------------------------------
@@ -305,24 +276,6 @@ fi
 #   e.g.: hdiutil create -size 10m 10MB.dmg
 #   the above create files that are almost all zeros - if random bytes are desired
 #   then use: ~/Dev/Perl/randBytes 1048576 > 10MB.dat
-
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
-# added by Anaconda3 5.3.0 installer
-# >>> conda init >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$(CONDA_REPORT_ERRORS=false '/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    \eval "$__conda_setup"
-else
-    if [ -f "/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/anaconda3/etc/profile.d/conda.sh"
-        CONDA_CHANGEPS1=false conda activate base
-    else
-        \export PATH="/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda init <<<
 
 export PATH="$HOME/.cargo/bin:$PATH"
 

@@ -89,6 +89,7 @@ plugins=(
   stack
   tmux
   z
+  zsh-completions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -112,6 +113,8 @@ prompt pure # NOTE: must be activated _after_ `source $ZSH/oh-my-zsh.sh`
 source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
 PROMPT='$(kube_ps1)'$PROMPT
 
+# To load zsh-completions plugin
+autoload -U compinit && compinit
 
 # User configuration
 
@@ -160,3 +163,5 @@ fpath=(~/.zsh $fpath)
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
