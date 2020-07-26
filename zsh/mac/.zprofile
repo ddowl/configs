@@ -20,21 +20,10 @@
 
 #   Change Prompt
 #   ------------------------------------------------------------
-export PS1="\w @ \h(\u): "
-# export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
-#   Set Paths
-#   ------------------------------------------------------------
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home"
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$HOME/local/bin:$HOME/.local/bin:$HOME/.ghcup/bin:$HOME/.rbenv/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:$HOME/.npm-packages/bin:$HOME/.yarn/bin:/Users/drewdowling/Library/Python/3.7/bin:$JAVA_HOME/bin:$PATH"
-export NODE_PATH="/usr/local/lib/node_modules"
 eval "$(rbenv init -)"
-
-#   Set Default Editor (change 'Vim' to the editor of your choice)
-#   ------------------------------------------------------------
-export EDITOR=/usr/bin/vim
 
 #   Set default blocksize for ls, df, du
 #   from this: http://hints.macworld.com/comment.php?mode=view&cid=24491
@@ -233,19 +222,9 @@ httpHeaders () { /usr/bin/curl -I -L $@ ; }             # httpHeaders:      Grab
 #   -------------------------------------------------------------------
 httpDebug () { /usr/bin/curl $@ -o /dev/null -w "dns: %{time_namelookup} connect: %{time_connect} pretransfer: %{time_pretransfer} starttransfer: %{time_starttransfer} total: %{time_total}\n" ; }
 
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/dev
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
-# source /usr/local/bin/virtualenvwrapper.sh
-
-
 #   ---------------------------------------
 #   9. OTHER FILE IMPORTS 
 #   ---------------------------------------
-
-if [ -f ~/.zsh_aliases ]; then
-  . ~/.zsh_aliases
-fi
 
 #   ---------------------------------------
 #   10.  REMINDERS & NOTES
@@ -277,9 +256,3 @@ fi
 #   the above create files that are almost all zeros - if random bytes are desired
 #   then use: ~/Dev/Perl/randBytes 1048576 > 10MB.dat
 
-export PATH="$HOME/.cargo/bin:$PATH"
-
-# Setting PATH for Python 3.6
-# The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
-export PATH
