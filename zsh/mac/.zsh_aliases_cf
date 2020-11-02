@@ -1,1 +1,3 @@
 export GOPRIVATE="code.cfops.it"
+
+alias cadence="docker run --rm ubercadence/cli:master --address host.docker.internal:7933 "
