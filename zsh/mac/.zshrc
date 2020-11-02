@@ -159,3 +159,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+
+# opam configuration
+test -r /Users/drewdowling/.opam/opam-init/init.zsh && . /Users/drewdowling/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
