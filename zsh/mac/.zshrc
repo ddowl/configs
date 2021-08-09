@@ -79,6 +79,7 @@ plugins=(
   cargo
   fd
   fzf
+  golang
   history
   mix
   osx
@@ -112,6 +113,7 @@ prompt pure # NOTE: must be activated _after_ `source $ZSH/oh-my-zsh.sh`
 
 source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
 PROMPT='$(kube_ps1)'$PROMPT
+kubeoff
 
 # To load zsh-completions plugin
 autoload -U compinit && compinit
@@ -166,7 +168,15 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+export GOPATH="$HOME/go"
+PATH="$GOPATH/bin:$PATH"
+fpath=($GOPATH/bin $fpath)
+
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+
+# init rbenv
+eval "$(rbenv init -)"
 
 # opam configuration
 test -r /Users/drewdowling/.opam/opam-init/init.zsh && . /Users/drewdowling/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+[ -f "/Users/drewdowling/.ghcup/env" ] && source "/Users/drewdowling/.ghcup/env" # ghcup-env

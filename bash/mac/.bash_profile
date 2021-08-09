@@ -327,7 +327,6 @@ fi
 unset __conda_setup
 # <<< conda init <<<
 
-export PATH="$HOME/.cargo/bin:$PATH"
 
 # Setting PATH for Python 3.6
 # The original version is saved in .bash_profile.pysave
@@ -347,3 +346,5 @@ if [ -f '/Users/drewdowling/Downloads/google-cloud-sdk/path.bash.inc' ]; then . 
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/drewdowling/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/drewdowling/Downloads/google-cloud-sdk/completion.bash.inc'; fi
+source "$HOME/.cargo/env"
+if [ -e /Users/drewdowling/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/drewdowling/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

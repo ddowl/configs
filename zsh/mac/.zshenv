@@ -24,3 +24,5 @@ export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="$JAVA_HOME/bin:$PATH"
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 export PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:$PATH"
+source "$HOME/.cargo/env"
+if [ -e /Users/drewdowling/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/drewdowling/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

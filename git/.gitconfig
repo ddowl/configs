@@ -86,3 +86,5 @@
 
 [includeIf "gitdir:~/cf-repos/"]
   path = ~/cf-repos/.gitconfig
+[init]
+	defaultBranch = main

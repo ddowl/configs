@@ -256,3 +256,26 @@ httpDebug () { /usr/bin/curl $@ -o /dev/null -w "dns: %{time_namelookup} connect
 #   the above create files that are almost all zeros - if random bytes are desired
 #   then use: ~/Dev/Perl/randBytes 1048576 > 10MB.dat
 
+sshuttlestart()
+{
+    for conn in $(sshoot list | sed 's/\*//' | grep -v '\-\-\-' | grep -v "Subnets" | awk '{print $1}')
+        do echo $conn
+        sshoot start $conn
+    done
+}
+
+sshuttlestop()
+{
+  for conn in $(sshoot list | sed 's/\*//' | grep -v '\-\-\-' | grep -v "Subnets" | awk '{print $1}')
+  do echo $conn
+    sshoot stop $conn
+  done
+}
+
+killssh()
+{
+  for p in $(ps aux | grep ssh | grep mux | awk '{print $2}')
+  do echo killing mux connection with PID $p
+    kill $p
+  done
+}
