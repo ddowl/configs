@@ -27,7 +27,7 @@ alias cic='set completion-ignore-case On'   # cic:          Make tab-completion 
 alias fzfp='fzf --preview "[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || (highlight -O ansi -l {} || coderay {} || rougify {} || cat {}) 2> /dev/null | head -500"'
 
 # Systems and Processes
-alias psg='ps aux | grep '
+alias psg='ps aux | rg '
 alias path='echo -e ${PATH//:/\\n}'         # path:         Echo all executable Paths
 # alias which='type -all'                     # which:        Find executables
 
