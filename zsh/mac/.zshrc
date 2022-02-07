@@ -68,6 +68,12 @@ ZSH_THEME="" # disabled for Pure prompt
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_BASE='/opt/homebrew/bin/fzf'
+export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
+export FZF_DEFAULT_COMMAND='fd --type f --follow --exclude .git --exclude node_modules'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -76,13 +82,12 @@ ZSH_THEME="" # disabled for Pure prompt
 plugins=(
   git
   brew
-  cargo
   fd
   fzf
   golang
   history
+  macos
   mix
-  osx
   ripgrep
   ruby
   rust
@@ -90,7 +95,6 @@ plugins=(
   stack
   tmux
   z
-  zsh-completions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -98,6 +102,7 @@ source $ZSH/oh-my-zsh.sh
 # Pure prompt options
 # To install, run: `npm install --global pure-prompt`
 # NOTE: prompt is incompatible with plugins "vi-mode" and "virtualenv"
+fpath+=$HOME/.zsh/pure
 autoload -U promptinit; promptinit
 
 # optionally define some options
@@ -111,8 +116,8 @@ zstyle ':prompt:pure:prompt:*' color cyan
 
 prompt pure # NOTE: must be activated _after_ `source $ZSH/oh-my-zsh.sh`
 
-source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
-PROMPT='$(kube_ps1)'$PROMPT
+source "/opt/homebrew/opt/kube-ps1/share/kube-ps1.sh"
+PS1='$(kube_ps1)'$PS1
 kubeoff
 
 # To load zsh-completions plugin
@@ -152,9 +157,14 @@ if [ -f ~/.zsh_aliases_cf ]; then
   . ~/.zsh_aliases_cf
 fi
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 eval $(thefuck --alias)
 
+eval "$(rbenv init -)"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_BASE='/opt/homebrew/bin/fzf'
 export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
 export FZF_DEFAULT_COMMAND='fd --type f --follow --exclude .git --exclude node_modules'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"

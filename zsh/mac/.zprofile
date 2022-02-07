@@ -23,7 +23,6 @@
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 
-eval "$(rbenv init -)"
 
 #   Set default blocksize for ls, df, du
 #   from this: http://hints.macworld.com/comment.php?mode=view&cid=24491
@@ -41,11 +40,6 @@ export BLOCKSIZE=1k
 #   2.  MAKE TERMINAL BETTER
 #   -----------------------------
 # See .zsh_aliases for more!
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
-
-eval $(thefuck --alias)
 
 # alias edit='subl'                           # edit:         Opens any file in sublime editor
 alias f='open -a Finder ./'                 # f:            Opens current directory in MacOS Finder
