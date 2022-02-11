@@ -68,11 +68,6 @@ ZSH_THEME="" # disabled for Pure prompt
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_BASE='/opt/homebrew/bin/fzf'
-export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
-export FZF_DEFAULT_COMMAND='fd --type f --follow --exclude .git --exclude node_modules'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
@@ -153,15 +148,13 @@ if [ -f ~/.zsh_aliases ]; then
     . ~/.zsh_aliases
 fi
 
-if [ -f ~/.zsh_aliases_cf ]; then
-  . ~/.zsh_aliases_cf
+if [ -f ~/.zsh_aliases_vkda ]; then
+  . ~/.zsh_aliases_vkda
 fi
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 eval $(thefuck --alias)
-
-eval "$(rbenv init -)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_BASE='/opt/homebrew/bin/fzf'
@@ -184,8 +177,16 @@ fpath=($GOPATH/bin $fpath)
 
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
 
+# iTerm shell integration
+source ~/.iterm2_shell_integration.zsh
+
 # init rbenv
 eval "$(rbenv init -)"
+
+
+# init pyenv
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
 
 # opam configuration
 test -r /Users/drewdowling/.opam/opam-init/init.zsh && . /Users/drewdowling/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
