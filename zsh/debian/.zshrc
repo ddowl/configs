@@ -11,7 +11,7 @@ export ZSH="/home/$USER/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="" # disabled for Pure prompt
+ZSH_THEME="simple" # disabled for Pure prompt
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -73,10 +73,11 @@ ZSH_THEME="" # disabled for Pure prompt
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  cargo
   fd
   fzf
+  golang
   history
+  macos
   mix
   ripgrep
   ruby
@@ -90,20 +91,20 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-fpath+=("$HOME/.zsh/pure")
-autoload -U promptinit; promptinit
+# fpath+=("$HOME/.zsh/pure")
+# autoload -U promptinit; promptinit
 
-# optionally define some options
-PURE_CMD_MAX_EXEC_TIME=10
+# # optionally define some options
+# PURE_CMD_MAX_EXEC_TIME=10
 
-# change the path color
-zstyle :prompt:pure:path color white
+# # change the path color
+# zstyle :prompt:pure:path color white
 
-# change the color for both `prompt:success` and `prompt:error`
-zstyle ':prompt:pure:prompt:*' color cyan
+# # change the color for both `prompt:success` and `prompt:error`
+# zstyle ':prompt:pure:prompt:*' color cyan
 
-# oh-my-zsh overrides the prompt so Pure must be activated after source $ZSH/oh-my-zsh.sh.
-prompt pure
+# # oh-my-zsh overrides the prompt so Pure must be activated after source $ZSH/oh-my-zsh.sh.
+# prompt pure
 
 
 # User configuration
@@ -137,10 +138,25 @@ if [ -f ~/.zsh_aliases ]; then
     . ~/.zsh_aliases
 fi
 
+if [ -f ~/.zsh_aliases_vkda ]; then
+  . ~/.zsh_aliases_vkda
+fi
+
 eval $(thefuck --alias)
 
+# init rbenv
+eval "$(rbenv init -)"
+
+# init pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_BASE='/opt/homebrew/bin/fzf'
 export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
+export FZF_DEFAULT_COMMAND='fd --type f --follow --exclude .git --exclude node_modules'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 

@@ -112,7 +112,7 @@ zstyle ':prompt:pure:prompt:*' color cyan
 prompt pure # NOTE: must be activated _after_ `source $ZSH/oh-my-zsh.sh`
 
 source "/opt/homebrew/opt/kube-ps1/share/kube-ps1.sh"
-PS1='$(kube_ps1)'$PS1
+PROMPT='$(kube_ps1)'$PROMPT
 kubeoff
 
 # To load zsh-completions plugin
